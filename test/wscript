@@ -15,7 +15,7 @@ def check_version_cxx(cfg):
         cxxflags = "-std=c++0x",
         execute  = False,
         fragment = """
-                       #if __cplusplus != 201103L
+                       #if __cplusplus < 201103L
                          #error %(MSG)s
                        #endif
                    """ % { "MSG" : error })
