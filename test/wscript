@@ -4,22 +4,6 @@ import sys, os
 components = ['gtest', '..']
 recurse    = lambda ctx : map(lambda proj: ctx.recurse(proj), components)
 
-def check_version_cxx(cfg):
-    error = "g++-4.7, clang-3.1 or newer required"
-
-    cfg.check_cxx(
-        msg      = "Checking compiler version",
-        okmsg    = "ok",
-        errmsg   = error,
-        type     = "cxx",
-        cxxflags = "-std=c++0x",
-        execute  = False,
-        fragment = """
-                       #if __cplusplus < 201103L
-                         #error %(MSG)s
-                       #endif
-                   """ % { "MSG" : error })
-
 def options(opt):
     opt.load('g++')
     opt.load('boost')
@@ -29,8 +13,6 @@ def options(opt):
 def configure(cfg):
     cfg.load('g++')
     cfg.load('boost')
-
-    check_version_cxx(cfg)
 
     recurse(cfg)
 
