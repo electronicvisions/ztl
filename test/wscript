@@ -5,13 +5,13 @@ components = ['gtest', '..']
 recurse    = lambda ctx : map(lambda proj: ctx.recurse(proj), components)
 
 def options(opt):
-    opt.load('g++')
+    opt.load('compiler_cxx')
     opt.load('boost')
 
     recurse(opt)
 
 def configure(cfg):
-    cfg.load('g++')
+    cfg.load('compiler_cxx')
     cfg.load('boost')
 
     recurse(cfg)
