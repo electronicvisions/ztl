@@ -1,0 +1,9 @@
+@Library("jenlib") _
+
+wafDefaultPipeline(projects: ["ztl"],
+                   container: [app: "wafer"],
+                   notificationChannel: "#softies")
+
+wafDefaultPipeline(projects: ["ztl"],
+                   container: [app: "dls-core"],
+                   notificationChannel: "#dls-software")

@@ -2,12 +2,14 @@
 import sys, os
 
 def options(opt):
-    pass
+    opt.recurse('test')
 
 def configure(cfg):
-    pass
+    cfg.recurse('test')
 
 def build(bld):
+    bld.recurse('test')
+
     bld(
         target          = 'ZTL',
         export_includes = '.',

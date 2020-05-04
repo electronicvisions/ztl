@@ -3,9 +3,11 @@
 // Copyright (c) 2013, Sebastian Jeltsch (sjeltsch@kip.uni-heidelberg.de)
 // Distributed under the terms of the GPLv2 or newer
 
-#include <boost/serialization/serialization.hpp>
-#include <boost/serialization/nvp.hpp>
+#include <boost/array.hpp>
 #include <boost/serialization/array.hpp>
+#include <boost/serialization/boost_array.hpp>
+#include <boost/serialization/nvp.hpp>
+#include <boost/serialization/serialization.hpp>
 
 #include "ztl/array.h"
 
