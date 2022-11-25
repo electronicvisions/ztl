@@ -15,15 +15,15 @@ def configure(cfg):
 
     cfg.check_boost(
             lib='serialization system thread',
-            uselib_store='BOOST')
+            uselib_store='BOOST4ZTL')
 
 def build(bld):
 
     bld(
-        target          = 'main',
+        target          = 'ztl_tests',
         features        = 'cxx cxxprogram gtest',
         source          = bld.path.ant_glob('*.cc'),
-        use             = ['ZTL', 'BOOST', 'gtest'],
+        use             = ['ZTL', 'BOOST4ZTL', 'gtest'],
         install_path    = 'bin',
         cxxflags        = [
                 '-g',
